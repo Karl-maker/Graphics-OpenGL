@@ -84,18 +84,6 @@ On Linux (Ubuntu/Debian-based), you will need **g++** or **clang++**, **GLFW**, 
    cd graphics-opengl
    ```
 
-2. Create the following directory structure (if not already present):
-   ```
-   your-project-name/
-   ├── main.cpp
-   ├── Makefile (if using make)
-   ├── .vscode/ (optional, for VS Code)
-   ├── build/ (compiled output)
-   └── .gitignore
-   ```
-
----
-
 ## **3. Building the Project**
 
 ### **macOS**
@@ -109,71 +97,13 @@ On Linux (Ubuntu/Debian-based), you will need **g++** or **clang++**, **GLFW**, 
 2. **Compile Using g++**:
    Run the following command:
    ```sh
-   g++ -g -o build/main main.cpp -lglfw -lGLEW -framework OpenGL
-   ```
-
-   **Explanation**:
-   - `-g`: Generates debug information.
-   - `-o build/main`: Places the compiled program in the `build/` directory.
-   - `main.cpp`: The source file.
-   - `-lglfw`, `-lGLEW`, `-framework OpenGL`: Links GLFW, GLEW, and OpenGL.
-
-3. **Run the Program**:
-   ```sh
-   ./build/main
-   ```
-
-### **Windows**
-
-1. **Using MinGW**:
-   Open **Command Prompt** or **PowerShell** in the project folder.
-
-   If using MinGW, run:
-   ```sh
-   g++ -g -o build/main main.cpp -lglfw3 -lglew32 -lopengl32
-   ```
-
-2. **Using MSVC** (Visual Studio Command Prompt):
-   Open **Developer Command Prompt for VS** and run:
-   ```sh
-   cl main.cpp /I"path\to\glew\include" /I"path\to\glfw\include" /link /LIBPATH:"path\to\glew\lib" /LIBPATH:"path\to\glfw\lib" glfw3.lib glew32.lib opengl32.lib
+   g++ -std=c++11 -g -Iinclude -o main src/main.cpp src/engine/GraphicsEngineMock.cpp -lglfw -lGLEW -framework OpenGL
    ```
 
 3. **Run the Program**:
    ```sh
-   build\main.exe
+   ./main
    ```
-
-### **Linux**
-
-1. **Using g++**:
-   Open **Terminal** and navigate to the project directory.
-
-   Run the following to compile:
-   ```sh
-   g++ -g -o build/main main.cpp -lglfw -lGLEW -lGL
-   ```
-
-2. **Run the Program**:
-   ```sh
-   ./build/main
-   ```
-
----
-
-## **4. Running the Program**
-
-After building the project successfully, run the executable:
-
-- **macOS/Linux**:
-  ```sh
-  ./build/main
-  ```
-- **Windows**:
-  ```sh
-  build\main.exe
-  ```
-
 ---
 
 ## **5. Troubleshooting**
