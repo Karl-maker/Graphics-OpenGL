@@ -25,6 +25,13 @@ int main()
     };
     GraphicsEngineMock graphicsEngineMock;
     graphicsEngineMock.draw(vertices);
+
+    while(!window->windowShouldClose()) {
+        window->pollEvents();
+    }
+
+    delete window;
+
     return 0;
 }
 
