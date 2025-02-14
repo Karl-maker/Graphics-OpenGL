@@ -1,7 +1,3 @@
-Here's a detailed **README** for setting up, building, and running your C++ OpenGL program on **macOS**, **Windows**, and **Linux**. This guide includes platform-specific instructions for each operating system.
-
----
-
 # **C++ OpenGL Program Setup Guide**
 
 This guide will walk you through the steps to set up, build, and run the program on **macOS**, **Windows**, and **Linux**.
@@ -84,8 +80,8 @@ On Linux (Ubuntu/Debian-based), you will need **g++** or **clang++**, **GLFW**, 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/your-project-name.git
-   cd your-project-name
+   git clone https://github.com/{user-name}/Graphics-OpenGL.git
+   cd graphics-opengl
    ```
 
 2. Create the following directory structure (if not already present):
