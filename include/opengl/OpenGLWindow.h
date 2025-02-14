@@ -1,6 +1,7 @@
 #ifndef OPENGL_WINDOW
 #define OPENGL_WINDOW
 
+#include "../glad/glad.h"
 #include <iostream>
 #include <GLFW/glfw3.h>
 
@@ -40,6 +41,14 @@ public:
     void makeCurrentContext() {
         glfwMakeContextCurrent(this->window);
     };
+
+    void load() {
+        gladLoadGL();
+        glViewport(0, 0, this->width, this->height);
+        glClearColor(0.0f, 0.0f,  0.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glfwSwapBuffers(this->window);
+    }
 
     bool checkWindow() {
         return this->window != nullptr;
